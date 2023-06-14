@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiffany.gibier <tiffany.gibier@student.    +#+  +:+       +#+        */
+/*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 14:16:56 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/06 11:52:17 by tiffany.gib      ###   ########.fr       */
+/*   Updated: 2023/06/14 14:17:29 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int	main(int argc, char **argv)
 {
 	t_fract	f;
 
+	if (argc == 1)
+		help_params(&f);
 	clean_init(&f);
-	// if (argc != 2 && argc != 4)
-	// 	handle_error("Need some help ? Try ./fractol h :)\n", &f);
 	f.mlx = mlx_init();
 	if (!f.mlx)
 		return (0);

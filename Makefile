@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tiffany.gibier <tiffany.gibier@student.    +#+  +:+       +#+         #
+#    By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 13:08:34 by tgibier           #+#    #+#              #
-#    Updated: 2023/06/06 12:18:15 by tiffany.gib      ###   ########.fr        #
+#    Updated: 2023/06/14 14:24:42 by tgibier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME			=	fractol
 
 # Compiler
 CC				=	cc
-CFLAGS			=	-g3 -Wall -Werror -Wextra
+CFLAGS			=	-g3 -Wall -Werror -Wextra -MMD
 LDFLAGS			=	-L $(LIBFT_PATH) -lft
 MLXFLAGS		=	-lX11 -lXext -L $(MLX_PATH) -lmlx -lm
 
@@ -33,8 +33,10 @@ HEAD			=	-I ./includes/ \
 					-I ./libs/libft/ \
 					-I ./libs/minilibx-linux/ 
 
+DEPS			=	${OBJS:.o=.d}
+
 # Sources
-SRCS_PATH		=	srcs/
+SRCS_PATH		=	srcs
 SRCS_NAMES		=	fractol.c \
 					scanner.c \
 					transfer.c \
@@ -63,14 +65,10 @@ MAKEFLAGS		=	--no-print-directory
 
 all	:	$(MLX) $(LIBFT) ${NAME}
 
-$(OBJS_PATH)/%.o	: $(SRCS_PATH)/%.c | $(OBJS_PATH)
-		@$(CC) $(CFLAGS) -c $< -o $@ $(HEAD)
-
-$(OBJS)		: $(OBJS_PATH)
-
-$(OBJS_PATH)	:
+$(OBJS_PATH)/%.o	: $(SRCS_PATH)/%.c
 		@mkdir -p $(OBJS_PATH)
 		@mkdir -p $(OBJS_PATH)/fractal/
+		@$(CC) $(CFLAGS) -c $< -o $@ $(HEAD)
 
 $(LIBFT)	:
 		@echo "Crafting Libft"
@@ -82,22 +80,24 @@ $(MLX)		:
 
 $(NAME) : $(OBJS) $(LIBFT) $(MLX)
 		@echo "Finally, compiling fractol"
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT) $(MLX) $(LDFLAGS) $(MLXFLAGS)
-		@echo "fractol ready, woop woop"
+		@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT) $(MLX) $(LDFLAGS) $(MLXFLAGS)
+		@echo "Fractol ready, WOOP WOOP"
 
 clean:
 	@echo "Cleaning the mess"
-	rm -rf $(OBJS_PATH)
-	rm -rf $(OBJS)
-	make clean -C $(LIBFT_PATH)
-	make clean -C $(MLX_PATH)
+	@rm -rf $(OBJS_PATH)
+	@rm -rf $(OBJS)
+	@make clean -C $(LIBFT_PATH)
+	@make clean -C $(MLX_PATH)
 	
 
 fclean:	clean
 	@echo "bye fractol"
-	rm -rf $(NAME)
-	rm -f $(LIBFT_PATH)$(LIBFT_NAME)
+	@rm -rf $(NAME)
+	@rm -f $(LIBFT_PATH)$(LIBFT_NAME)
 
 re:	fclean all
+
+-include $(DEPS)
 
 .PHONY:	all clean fclean re

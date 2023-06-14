@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiffany.gibier <tiffany.gibier@student.    +#+  +:+       +#+        */
+/*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:43:10 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/06 12:21:36 by tiffany.gib      ###   ########.fr       */
+/*   Updated: 2023/06/14 14:23:41 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,18 @@ typedef struct s_fract
 
 int		main(int argc, char **argv);
 void	scanner(int argc, char **argv, t_fract *f);
+void	transfer(t_fract *f);
+int		virtualization(t_fract *f);
+
 int		initialization(t_fract *f);
 void	clean_init(t_fract *f);
-void	transfer(t_fract *f);
-// void	virtualization(t_fract *f);
 int		clean_exit(t_fract *f);
 void	handle_error(char *str, t_fract *f);
 
 void	help(int keysym, t_fract *f);
 void	help_params(t_fract *f);
 
-int		virtualization(t_fract *f);
+void	img_pix_put(t_img *img, int x, int y, int color);
 
 double	sqr(double thing);
 
@@ -96,6 +97,12 @@ void	iter_brot(t_fract *f);
 void	iter_box(t_fract *f);
 void	iter_ship(t_fract *f);
 
+int		handle_mouse(int button, int x, int y, t_fract *f);
+int		handle_keys(int keysym, t_fract *f);
+void	change_set(int keysym, t_fract *f);
+void	change_iter(int keysym, t_fract *f);
+void	change_colors(int keysym, t_fract *f);
+
 int		palette(int color, t_fract *f);
 int		mountbatten(int color);
 int		dibistan(int color);
@@ -103,13 +110,5 @@ int		rorschach(int color);
 int		nightsky(int color);
 int		rainbow(int color);
 int		golden(int color);
-
-void	img_pix_put(t_img *img, int x, int y, int color);
-
-int		handle_mouse(int button, int x, int y, t_fract *f);
-int		handle_keys(int keysym, t_fract *f);
-void	change_set(int keysym, t_fract *f);
-void	change_iter(int keysym, t_fract *f);
-void	change_colors(int keysym, t_fract *f);
 
 #endif

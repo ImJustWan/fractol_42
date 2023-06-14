@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_keys.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiffany.gibier <tiffany.gibier@student.    +#+  +:+       +#+        */
+/*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 18:21:34 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/10 14:04:28 by tiffany.gib      ###   ########.fr       */
+/*   Updated: 2023/06/14 10:22:32 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ static void	key_zoom(int keysym, t_fract *f)
 
 int	handle_keys(int keysym, t_fract *f)
 {
-	// printf("keysym is %d\n", keysym);
 	mlx_hook(f->win, 17, 0, clean_exit, f);
 	if (keysym == ESC)
 		clean_exit(f);

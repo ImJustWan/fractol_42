@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   the_box.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiffany.gibier <tiffany.gibier@student.    +#+  +:+       +#+        */
+/*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 19:23:10 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/06 14:09:36 by tiffany.gib      ###   ########.fr       */
+/*   Updated: 2023/06/14 10:26:12 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	golden(int color)
 {
-	static int	golden[100] = {0x110902, 0x150b01, 0x190c01, 0x1c0e00, 0x1f0f00, 
+	static int	golden[100] = {0x110902, 0x150b01, 0x190c01, 0x1c0e00, 0x1f0f00,
 		0x221000, 0x271403, 0x2d1705, 0x331a07, 0x3a1d09, 0x40200b, 0x47230d,
 		0x4d260e, 0x542a0f, 0x5b2d0f, 0x623010, 0x693411, 0x703711, 0x773a12,
 		0x7e3e12, 0x8c4513, 0x9b4c14, 0xaa5314, 0xb95b14, 0xc96214, 0xd86a13,
