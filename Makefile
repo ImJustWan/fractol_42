@@ -6,7 +6,7 @@
 #    By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 13:08:34 by tgibier           #+#    #+#              #
-#    Updated: 2023/06/14 14:24:42 by tgibier          ###   ########.fr        #
+#    Updated: 2023/06/14 15:10:18 by tgibier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,18 +20,18 @@ LDFLAGS			=	-L $(LIBFT_PATH) -lft
 MLXFLAGS		=	-lX11 -lXext -L $(MLX_PATH) -lmlx -lm
 
 # Libft
-LIBFT_PATH		=	libs/libft/
+LIBFT_PATH		=	libft/
 LIBFT_NAME		=	libft.a
 LIBFT			=	$(LIBFT_PATH)$(LIBFT_NAME)
 
 # Minilibx
-MLX_PATH		=	libs/minilibx-linux/
+MLX_PATH		=	minilibx-linux/
 MLX_NAME		=	libmlx.a
 MLX				=	$(MLX_PATH)$(MLX_NAME)
 
 HEAD			=	-I ./includes/ \
-					-I ./libs/libft/ \
-					-I ./libs/minilibx-linux/ 
+					-I ./libft/ \
+					-I ./minilibx-linux/ 
 
 DEPS			=	${OBJS:.o=.d}
 

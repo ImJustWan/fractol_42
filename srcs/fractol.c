@@ -6,7 +6,7 @@
 /*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 14:16:56 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/14 14:17:29 by tgibier          ###   ########.fr       */
+/*   Updated: 2023/06/14 16:27:29 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int	main(int argc, char **argv)
 {
 	t_fract	f;
 
+	clean_init(&f);
 	if (argc == 1)
 		help_params(&f);
-	clean_init(&f);
 	f.mlx = mlx_init();
 	if (!f.mlx)
 		return (0);

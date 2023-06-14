@@ -6,7 +6,7 @@
 /*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:43:10 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/14 14:23:41 by tgibier          ###   ########.fr       */
+/*   Updated: 2023/06/14 15:10:44 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <X11/keysym.h>
 # include <X11/X.h>
 # include <math.h>
-# include "../libs/minilibx-linux/mlx.h"
-# include "../libs/libft/includes/libft.h"
+# include "../minilibx-linux/mlx.h"
+# include "../libft/includes/libft.h"
 
 # define WIDTH 		800
 # define HEIGHT 	800
