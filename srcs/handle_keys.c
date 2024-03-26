@@ -6,7 +6,7 @@
 /*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 18:21:34 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/14 10:22:32 by tgibier          ###   ########.fr       */
+/*   Updated: 2024/03/26 17:55:31 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	handle_keys(int keysym, t_fract *f)
 	mlx_hook(f->win, 17, 0, clean_exit, f);
 	if (keysym == ESC)
 		clean_exit(f);
-	help(keysym, f);
+	help_menu(keysym, f);
 	key_move(keysym, f);
 	key_zoom(keysym, f);
 	change_set(keysym, f);

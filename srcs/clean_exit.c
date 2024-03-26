@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dematerialization.c                                :+:      :+:    :+:   */
+/*   clean_exit.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiffany.gibier <tiffany.gibier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,6 +11,16 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+void	handle_error(char *str, t_fract *f)
+{
+	ft_putstr_fd(str, 1);
+	ft_putendl_fd("\n---->  Need some help ? Try ./fractol h :)\n\n", 1);
+	help_params(f);
+	clean_exit(f);
+	exit (0);
+}
+
 
 int	clean_exit(t_fract *f)
 {
@@ -26,14 +36,5 @@ int	clean_exit(t_fract *f)
 		mlx_destroy_display(f->mlx);
 		free(f->mlx);
 	}
-	exit (0);
-}
-
-void	handle_error(char *str, t_fract *f)
-{
-	ft_putstr_fd(str, 1);
-	ft_putendl_fd("\n---->  Need some help ? Try ./fractol h :)\n\n", 1);
-	help_params(f);
-	clean_exit(f);
 	exit (0);
 }

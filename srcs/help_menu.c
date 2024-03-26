@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   help.c                                             :+:      :+:    :+:   */
+/*   help_menu.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -90,7 +90,7 @@ void	help_params(t_fract *f)
 	clean_exit(f);
 }
 
-void	help(int keysym, t_fract *f)
+void	help_menu(int keysym, t_fract *f)
 {
 	(void)f;
 	if (keysym == KEY_H)

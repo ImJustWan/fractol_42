@@ -6,7 +6,7 @@
 /*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:43:10 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/14 15:10:44 by tgibier          ###   ########.fr       */
+/*   Updated: 2024/03/26 18:00:49 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,16 @@ typedef struct s_fract
 }	t_fract;
 
 int		main(int argc, char **argv);
-void	scanner(int argc, char **argv, t_fract *f);
-void	transfer(t_fract *f);
-int		virtualization(t_fract *f);
+void	parsing(int argc, char **argv, t_fract *f);
+void	init_mlx(t_fract *f);
+int		render(t_fract *f);
 
 int		initialization(t_fract *f);
 void	clean_init(t_fract *f);
 int		clean_exit(t_fract *f);
 void	handle_error(char *str, t_fract *f);
 
-void	help(int keysym, t_fract *f);
+void	help_menu(int keysym, t_fract *f);
 void	help_params(t_fract *f);
 
 void	img_pix_put(t_img *img, int x, int y, int color);

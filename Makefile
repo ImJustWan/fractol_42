@@ -6,7 +6,7 @@
 #    By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 13:08:34 by tgibier           #+#    #+#              #
-#    Updated: 2023/06/14 15:10:18 by tgibier          ###   ########.fr        #
+#    Updated: 2024/03/26 18:01:53 by tgibier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,10 @@ DEPS			=	${OBJS:.o=.d}
 # Sources
 SRCS_PATH		=	srcs
 SRCS_NAMES		=	fractol.c \
-					scanner.c \
-					transfer.c \
-					virtualization.c \
-					dematerialization.c \
-					help.c \
+					parsing.c \
+					render.c \
+					clean_exit.c \
+					help_menu.c \
 					palette.c \
 					handle_keys.c \
 					handle_more_keys.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scanner.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiffany.gibier <tiffany.gibier@student.    +#+  +:+       +#+        */
+/*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 14:00:09 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/10 22:25:59 by tiffany.gib      ###   ########.fr       */
+/*   Updated: 2024/03/26 17:52:15 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	loading_julia(char **argv, t_fract *f)
 		handle_error("Invalid parameters for Julia :(\n", f);
 }
 
-static void	scanner_julia(int argc, char **argv, t_fract *f)
+static void	parsing_julia(int argc, char **argv, t_fract *f)
 {
 	f->max_iter = 100;
 	if (argc == 2)
@@ -84,11 +84,11 @@ static void	scanner_julia(int argc, char **argv, t_fract *f)
 	}
 }
 
-void	scanner(int argc, char **argv, t_fract *f)
+void	parsing(int argc, char **argv, t_fract *f)
 {
 	if (ft_strncmp(argv[1], "1", 20) == 0
 		|| ft_strncmp(argv[1], "Julia", 20) == 0)
-		scanner_julia(argc, argv, f);
+		parsing_julia(argc, argv, f);
 	else if (argc == 2)
 	{
 		if (ft_strncmp(argv[1], "2", 20) == 0

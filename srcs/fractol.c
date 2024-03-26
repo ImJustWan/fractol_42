@@ -6,7 +6,7 @@
 /*   By: tgibier <tgibier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 14:16:56 by tgibier           #+#    #+#             */
-/*   Updated: 2023/06/14 16:27:29 by tgibier          ###   ########.fr       */
+/*   Updated: 2024/03/26 18:00:03 by tgibier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	main(int argc, char **argv)
 	f.mlx = mlx_init();
 	if (!f.mlx)
 		return (0);
-	scanner(argc, argv, &f);
-	transfer(&f);
+	parsing(argc, argv, &f);
+	init_mlx(&f);
 	clean_exit(&f);
 	return (1);
 }
